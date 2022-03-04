@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/topHeadlines">
+
+    <fragment
+        android:id="@+id/topHeadlines"
+        android:name="com.androiddevs.mvvmnewsapp.ui.fragments.TopHeadlines"
+        android:label="TopHeadlines" >
+        <action
+            android:id="@+id/action_topHeadlines_to_article"
+            app:destination="@id/article"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_topHeadlines_to_properties2"
+            app:destination="@id/properties2" />
+    </fragment>
+    <fragment
+        android:id="@+id/latestNews"
+        android:name="com.androiddevs.mvvmnewsapp.ui.fragments.SavedNews"
+        android:label="LatestNews" >
+        <action
+            android:id="@+id/action_latestNews_to_article"
+            app:destination="@id/article"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchNews"
+        android:name="com.androiddevs.mvvmnewsapp.ui.fragments.SearchNews"
+        android:label="SearchNews" >
+        <action
+            android:id="@+id/action_searchNews_to_article"
+            app:destination="@id/article"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/article"
+        android:name="com.androiddevs.mvvmnewsapp.ui.fragments.Article"
+        android:label="Article" >
+        <argument
+            android:name="article"
+            app:argType="jsonToKt.Article" />
+    </fragment>
+    <fragment
+        android:id="@+id/properties2"
+        android:name="com.androiddevs.mvvmnewsapp.ui.fragments.Properties"
+        android:label="Properties" >
+        <action
+            android:id="@+id/action_properties2_to_topHeadlines"
+            app:destination="@id/topHeadlines" />
+    </fragment>
+</navigation>
